@@ -3,13 +3,30 @@
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="incidencia_list">
-      <field name="name">soporte list</field>
-      <field name="model">soporte.soporte</field>
+      <field name="name">Lista de incidencias</field>
+      <field name="model">soporte.incidencias</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="titulo"/>
+          <field name="descripcion"/>
+          <field name="prioridad"/>
+          <field name="urgente"/>
+          <field name="ubicacion"/>
+          <field name="cerrada"/>
+          <field name="fecha_creacion"/>
+          <field name="fecha_modificacion"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="ubicaciones_list">
+      <field name="name">Lista de ubicaciones</field>
+      <field name="model">soporte.ubicacion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="pabellon"/>
+          <field name="planta"/>
         </tree>
       </field>
     </record>
@@ -18,43 +35,46 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="incidencia_action_window">
-      <field name="name">soporte window</field>
+      <field name="name">Lista de incidencias</field>
       <field name="res_model">soporte.incidencia</field>
       <field name="view_mode">tree,form</field>
     </record>
 
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="soporte.action_server">
-      <field name="name">soporte server</field>
-      <field name="model_id" ref="model_soporte_soporte"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
+    <record model="ir.actions.act_window" id="ubicacion_action_window">
+      <field name="name">Lista de ubicaciones</field>
+      <field name="res_model">soporte.ubicacion</field>
+      <field name="view_mode">tree,form</field>
     </record>
--->
+
+    <record model="ir.actions.act_window" id="tecnico_action_window">
+      <field name="name">Lista de tecnicos</field>
+      <field name="res_model">soporte.tecnico</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="soporte" id="soporte.menu_root"/>
--->
+
+    <menuitem name="SoporteSGE" id="soporte.menu_root"/>
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="soporte.menu_1" parent="soporte.menu_root"/>
-    <menuitem name="Menu 2" id="soporte.menu_2" parent="soporte.menu_root"/>
--->
+
+    <menuitem name="Incidencias" id="soporte_incidencias" parent="soporte.menu_root"/>
+    <menuitem name="Ubicaciones" id="soporte_ubicaciones" parent="soporte.menu_root"/>
+    <menuitem name="Tecnicos" id="soporte_tecnicos" parent="soporte.menu_root"/>
+
+
+
     <!-- actions -->
-<!--
-    <menuitem name="List" id="soporte.menu_1_list" parent="soporte.menu_1"
-              action="soporte.action_window"/>
-    <menuitem name="Server to list" id="soporte" parent="soporte.menu_2"
-              action="soporte.action_server"/>
--->
+
+    <menuitem name="Mostrar lista" id="soporte_incidencias_list" parent="soporte_incidencias"
+              action="incidencia_action_window"/>
+    
+    <menuitem name="Nueva incidencia" id="soporte_ubicaciones_list" parent="soporte_ubicaciones"
+              action="ubicacion_action_window"/>
+
+    <menuitem name="Tecnicos" id="soporte_tecnicos_list" parent="soporte_tecnicos"
+              action="tecnico_action_window"/>
+
   </data>
 </odoo>

@@ -3,8 +3,7 @@
     'name': "soporte",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Modulo para la gestion de incidencias de SGE""",
 
     'description': """
         Descripción del módulo para la gestión de incidencias
