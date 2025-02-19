@@ -2,20 +2,20 @@
 # from odoo import http
 
 
-# class Citas(http.Controller):
-#     @http.route('/citas/citas', auth='public')
+# class Soporte(http.Controller):
+#     @http.route('/soporte/soporte', auth='public')
 #     def index(self, **kw):
 #         return "Hello, world"
 
-#     @http.route('/citas/citas/objects', auth='public')
+#     @http.route('/soporte/soporte/objects', auth='public')
 #     def list(self, **kw):
-#         return http.request.render('citas.listing', {
-#             'root': '/citas/citas',
-#             'objects': http.request.env['citas.citas'].search([]),
+#         return http.request.render('soporte.listing', {
+#             'root': '/soporte/soporte',
+#             'objects': http.request.env['soporte.soporte'].search([]),
 #         })
 
-#     @http.route('/citas/citas/objects/<model("citas.citas"):obj>', auth='public')
+#     @http.route('/soporte/soporte/objects/<model("soporte.soporte"):obj>', auth='public')
 #     def object(self, obj, **kw):
-#         return http.request.render('citas.object', {
+#         return http.request.render('soporte.object', {
 #             'object': obj
 #         })

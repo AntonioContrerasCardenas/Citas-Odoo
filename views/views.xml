@@ -1,10 +1,10 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="citas.list">
-      <field name="name">citas list</field>
-      <field name="model">citas.citas</field>
+
+    <record model="ir.ui.view" id="incidencia_list">
+      <field name="name">soporte list</field>
+      <field name="model">soporte.soporte</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -13,22 +13,22 @@
         </tree>
       </field>
     </record>
--->
+
 
     <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="citas.action_window">
-      <field name="name">citas window</field>
-      <field name="res_model">citas.citas</field>
+
+    <record model="ir.actions.act_window" id="incidencia_action_window">
+      <field name="name">soporte window</field>
+      <field name="res_model">soporte.incidencia</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+
 
     <!-- server action to the one above -->
 <!--
-    <record model="ir.actions.server" id="citas.action_server">
-      <field name="name">citas server</field>
-      <field name="model_id" ref="model_citas_citas"/>
+    <record model="ir.actions.server" id="soporte.action_server">
+      <field name="name">soporte server</field>
+      <field name="model_id" ref="model_soporte_soporte"/>
       <field name="state">code</field>
       <field name="code">
         action = {
@@ -42,19 +42,19 @@
 
     <!-- Top menu item -->
 <!--
-    <menuitem name="citas" id="citas.menu_root"/>
+    <menuitem name="soporte" id="soporte.menu_root"/>
 -->
     <!-- menu categories -->
 <!--
-    <menuitem name="Menu 1" id="citas.menu_1" parent="citas.menu_root"/>
-    <menuitem name="Menu 2" id="citas.menu_2" parent="citas.menu_root"/>
+    <menuitem name="Menu 1" id="soporte.menu_1" parent="soporte.menu_root"/>
+    <menuitem name="Menu 2" id="soporte.menu_2" parent="soporte.menu_root"/>
 -->
     <!-- actions -->
 <!--
-    <menuitem name="List" id="citas.menu_1_list" parent="citas.menu_1"
-              action="citas.action_window"/>
-    <menuitem name="Server to list" id="citas" parent="citas.menu_2"
-              action="citas.action_server"/>
+    <menuitem name="List" id="soporte.menu_1_list" parent="soporte.menu_1"
+              action="soporte.action_window"/>
+    <menuitem name="Server to list" id="soporte" parent="soporte.menu_2"
+              action="soporte.action_server"/>
 -->
   </data>
 </odoo>
