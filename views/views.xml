@@ -6,13 +6,15 @@
       <field name="name">Lista de incidencias</field>
       <field name="model">soporte.incidencias</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree decoration-success="cerrada == True" decoration-danger="prioridad &gt; 7">
           <field name="titulo"/>
-          <field name="descripcion"/>
-          <field name="prioridad"/>
+          <field name="descripcion" invisible="1"/>
+          <field name="prioridad" 
+          invisible="1"
+          />
           <field name="urgente"/>
-          <field name="ubicacion"/>
-          <field name="cerrada"/>
+          <field name="ubicacion_id" />
+          <field name="cerrada" />
           <field name="fecha_creacion"/>
           <field name="fecha_modificacion"/>
         </tree>
