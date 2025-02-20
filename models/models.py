@@ -153,6 +153,7 @@ class ubicacion(models.Model):
     incidencias_ids = fields.One2many(
         string='Incidencias',
         comodel_name='soporte.incidencia',
+        inverse_name='ubicacion_id'  # ← Añade esta línea
     )
     
 

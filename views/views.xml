@@ -4,11 +4,11 @@
 
     <record model="ir.ui.view" id="incidencia_list">
       <field name="name">Lista de incidencias</field>
-      <field name="model">soporte.incidencias</field>
+      <field name="model">soporte.incidencia</field>
       <field name="arch" type="xml">
         <tree decoration-success="cerrada == True" decoration-danger="prioridad &gt; 7">
           <field name="titulo"/>
-          <field name="descripcion" invisible="1"/>
+          <field name="description" invisible="1"/>
           <field name="prioridad" 
           invisible="1"
           />
