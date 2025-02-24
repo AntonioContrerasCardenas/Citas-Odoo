@@ -9,6 +9,8 @@ class incidencia(models.Model):
     _name = 'soporte.incidencia'
     _description = 'Modelo para la gestión de incidencias'
     
+    def informe_incidencia_boton(self):
+        return self.env.ref('soporte.action_informe_incidencias').report_action(self)
     
     titulo = fields.Char(
         string='Titulo',
@@ -129,7 +131,7 @@ class ubicacion(models.Model):
     _name = 'soporte.ubicacion'
     _description = 'Modelo para almacenar las ubicaciones'
     
-    
+    _rec_name = 'nombre'
     nombre = fields.Char(
         string='Nombre',
         
