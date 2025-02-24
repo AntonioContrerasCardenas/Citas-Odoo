@@ -6,29 +6,76 @@
       <field name="name">Lista de incidencias</field>
       <field name="model">soporte.incidencia</field>
       <field name="arch" type="xml">
-        <tree decoration-success="cerrada == True" decoration-danger="prioridad &gt; 7">
-          <field name="titulo"/>
-          <field name="description" invisible="1"/>
-          <field name="prioridad" 
-          invisible="1"
+        <tree decoration-success="cerrada == True" decoration-danger="prioridad &gt; 7"
+          editable="top">
+          <field name="titulo" />
+          <field name="description" invisible="1" />
+          <field name="prioridad"
+            invisible="1"
           />
-          <field name="urgente"/>
+          <field name="urgente" />
           <field name="ubicacion_id" />
           <field name="cerrada" />
-          <field name="fecha_creacion"/>
-          <field name="fecha_modificacion"/>
+          <field name="fecha_creacion" />
+          <field name="fecha_modificacion" />
         </tree>
       </field>
     </record>
+
+
+    <record model="ir.ui.view" id="incidencia_list">
+      <field name="name">Lista de incidencias</field>
+      <field name="model">soporte.incidencia</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet string="Modelo para la gestión de incidencias">
+            <group>
+              <group>
+                <field name="titulo" on_change="1" modifiers="{&quot;required&quot;: true}" />
+              </group>
+            </group>
+            <group>
+              <field name="description" on_change="1" modifiers="{&quot;required&quot;: true}" />
+            </group>
+            <group>
+              <group>
+                <field name="prioridad" on_change="1" />
+                <field name="cerrada" on_change="1" />
+                <field name="archivo" on_change="1" />
+                <field name="fecha_creacion" />
+              </group>
+              <group>
+                <field name="urgente" modifiers="{&quot;readonly&quot;: true}" />
+                <field name="ubicacion_id" on_change="1" can_create="true" can_write="true" />
+                <field name="foto" />
+                <field name="fecha_modificacion" />
+              </group>
+            </group>
+            <group>
+              <field name="tecnico_ids" can_create="true" can_write="true">
+                <tree string="Modelo para almacenar los datos de los tecnicos">
+                  <field name="id" modifiers="{&quot;readonly&quot;: true}" />
+                </tree>
+              </field>
+            </group>
+            <group />
+            <group>
+              <separator />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
 
     <record model="ir.ui.view" id="ubicaciones_list">
       <field name="name">Lista de ubicaciones</field>
       <field name="model">soporte.ubicacion</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nombre"/>
-          <field name="pabellon"/>
-          <field name="planta"/>
+          <field name="nombre" />
+          <field name="pabellon" />
+          <field name="planta" />
         </tree>
       </field>
     </record>
@@ -57,26 +104,25 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="SoporteSGE" id="soporte.menu_root"/>
+    <menuitem name="SoporteSGE" id="soporte.menu_root" />
 
     <!-- menu categories -->
 
-    <menuitem name="Incidencias" id="soporte_incidencias" parent="soporte.menu_root"/>
-    <menuitem name="Ubicaciones" id="soporte_ubicaciones" parent="soporte.menu_root"/>
-    <menuitem name="Tecnicos" id="soporte_tecnicos" parent="soporte.menu_root"/>
-
+    <menuitem name="Incidencias" id="soporte_incidencias" parent="soporte.menu_root" />
+    <menuitem name="Ubicaciones" id="soporte_ubicaciones" parent="soporte.menu_root" />
+    <menuitem name="Tecnicos" id="soporte_tecnicos" parent="soporte.menu_root" />
 
 
     <!-- actions -->
 
     <menuitem name="Mostrar lista" id="soporte_incidencias_list" parent="soporte_incidencias"
-              action="incidencia_action_window"/>
-    
+      action="incidencia_action_window" />
+
     <menuitem name="Nueva incidencia" id="soporte_ubicaciones_list" parent="soporte_ubicaciones"
-              action="ubicacion_action_window"/>
+      action="ubicacion_action_window" />
 
     <menuitem name="Tecnicos" id="soporte_tecnicos_list" parent="soporte_tecnicos"
-              action="tecnico_action_window"/>
+      action="tecnico_action_window" />
 
   </data>
 </odoo>
