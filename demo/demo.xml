@@ -1,30 +1,72 @@
 <odoo>
-    <data>
-<!--
-          <record id="object0" model="soporte.soporte">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
+  <data>
 
-          <record id="object1" model="soporte.soporte">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
+    <!-- Datos para el modelo soporte.tecnico -->
 
-          <record id="object2" model="soporte.soporte">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
 
-          <record id="object3" model="soporte.soporte">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
+    <record id="tecnico0" model="soporte.tecnico">
+      <field name="nombre">Tecnico 0</field>
+    </record>
 
-          <record id="object4" model="soporte.soporte">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
-    </data>
+    <record id="tecnico1" model="soporte.tecnico">
+      <field name="nombre">Tecnico 1</field>
+    </record>
+
+    <record id="tecnico2" model="soporte.tecnico">
+      <field name="nombre">Tecnico 2</field>
+    </record>
+
+
+    <!-- Datos para el modelo soporte.ubicacion -->
+
+    <record id="ubicacion0" model="soporte.ubicacion">
+      <field name="nombre">Aula P1</field>
+      <field name="pabellon">1</field>
+      <field name="planta">1</field>
+    </record>
+
+    <record id="ubicacion1" model="soporte.ubicacion">
+      <field name="nombre">Aula P2</field>
+      <field name="pabellon">1</field>
+      <field name="planta">2</field>
+    </record>
+
+    <record id="ubicacion2" model="soporte.ubicacion">
+      <field name="nombre">Aula R1</field>
+      <field name="pabellon">2</field>
+      <field name="planta">1</field>
+    </record>
+
+    <record id="ubicacion2" model="soporte.ubicacion">
+      <field name="nombre">Salon de actos</field>
+      <field name="pabellon">2</field>
+      <field name="planta">0</field>
+    </record>
+
+    <!-- Datos para el modelo soporte.incidencia -->
+    <record id="incidencia0" model="soporte.incidencia">
+      <field name="titulo">Incidencia 0</field>
+      <field name="descripcion">El ordenador del aula no funciona.</field>
+      <field name="prioridad">0</field>
+      <field name="ubicacion_id" ref="ubicacion2" />
+      <field name="cerrada">0</field>
+      <field name="foto" file="soporte/static/imgs/foto1.png" type="base64"></field>
+      <field name="fecha_creacion" eval="(datetime.now()).strftime('%Y-%m-%d')" />
+      <field name="fecha_modificacion" eval="(datetime.now()).strftime('%Y-%m-%d')" />
+      <!-- <field name="urgente">True</field> -->
+    </record>
+
+    <record id="incidencia1" model="soporte.incidencia">
+      <field name="titulo">Incidencia 1</field>
+      <field name="descripcion">El raton del aula no funciona.</field>
+      <field name="prioridad">2</field>
+      <field name="ubicacion_id" ref="ubicacion3" />
+      <field name="cerrada">1</field>
+      <field name="foto" file="soporte/static/imgs/foto2.png" type="base64"></field>
+      <field name="fecha_creacion" eval="(datetime.now()).strftime('%Y-%m-%d')" />
+      <field name="fecha_modificacion" eval="(datetime.now()).strftime('%Y-%m-%d')" />
+      <field name="tecnico_ids" eval="[(6,0, [ref('tecnico1'), ref('tecnico2')])]" />
+    </record>
+
+  </data>
 </odoo>

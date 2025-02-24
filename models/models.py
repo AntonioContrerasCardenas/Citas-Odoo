@@ -166,7 +166,7 @@ class tecnico(models.Model):
     _name = 'soporte.tecnico'
     _description = 'Modelo para almacenar los datos de los tecnicos'
 
-
+    _rec_name='nombre'
     nombre = fields.Char(
         string='Nombre',
         required=True,
