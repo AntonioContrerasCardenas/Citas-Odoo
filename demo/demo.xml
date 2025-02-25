@@ -2,8 +2,6 @@
   <data>
 
     <!-- Datos para el modelo soporte.tecnico -->
-
-
     <record id="tecnico0" model="soporte.tecnico">
       <field name="nombre">Tecnico 0</field>
     </record>
@@ -18,7 +16,6 @@
 
 
     <!-- Datos para el modelo soporte.ubicacion -->
-
     <record id="ubicacion0" model="soporte.ubicacion">
       <field name="nombre">Aula P1</field>
       <field name="pabellon">1</field>
@@ -37,11 +34,12 @@
       <field name="planta">1</field>
     </record>
 
-    <record id="ubicacion2" model="soporte.ubicacion">
+    <record id="ubicacion3" model="soporte.ubicacion">
       <field name="nombre">Salon de actos</field>
       <field name="pabellon">2</field>
       <field name="planta">0</field>
     </record>
+
 
     <!-- Datos para el modelo soporte.incidencia -->
     <record id="incidencia0" model="soporte.incidencia">

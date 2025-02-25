@@ -148,7 +148,7 @@ class ubicacion(models.Model):
     
     planta = fields.Selection(
         string='Planta',
-        selection=[('1', 'Planta primera'), ('2', 'Planta segunda'), ('3', 'Planta baja')]
+        selection=[('0', 'Planta primera'), ('1', 'Planta segunda'), ('2', 'Planta baja')]
     )
     
     
@@ -164,9 +164,20 @@ class ubicacion(models.Model):
 
 class tecnico(models.Model):
     _name = 'soporte.tecnico'
-    _description = 'Modelo para almacenar los datos de los tecnicos'
+    
+    # _inherit = ['soporte.tecnico']
+    
+    _description = 'Modelo para almacenar las personas que reparan incidencias'
 
     _rec_name='nombre'
+    
+    
+    # tipo = fields.Selection(
+    #     string='Tipo',
+    #     selection=[('0', 'Tec.general'), ('1', 'Tec.Hardware'), ('2', 'Tec.Software'), ('3', 'Tec.Servicios')]
+    # )
+    
+    
     nombre = fields.Char(
         string='Nombre',
         required=True,

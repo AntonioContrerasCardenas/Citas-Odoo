@@ -22,7 +22,7 @@
         <field name="category_id" ref="soporte_categoria_incidencia" />
         <field name="comment">Usuarios administradores para soporte</field>
         <field name="users" eval="[(4, ref('base.user_admin'))]" />
-        <field name="implied_ids" eval="[(4, ref('soporte_usuarios'))]" />
+        <field name="implied_ids" eval="[(4, ref('soporte_users'))]" />
 
     </record>
 
