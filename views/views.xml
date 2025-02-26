@@ -118,6 +118,17 @@
       </field>
     </record>
 
+    <!-- Añadido para el hijo -->
+    <record model="ir.ui.view" id="tecnicos_list">
+      <field name="name">Lista de tecnicos</field>
+      <field name="model">soporte.tecnico</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre" />
+        </tree>
+      </field>
+    </record>
+
 
     <!-- actions opening views on models -->
 
