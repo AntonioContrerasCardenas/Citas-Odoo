@@ -29,50 +29,50 @@
 
       <field name="print_report_name"> 'Soporte - %s' % (incidencia.titulo)</field>
       <field name="paperformat_id" ref="soporte_paperformat_id" />
-
-      <template id="soporte.report_incidencia">
-        <t t-call="web.basic_layout">
-
-          <div class="alert alert-primary" role="alert">
-            <h1>Reporte de incidencias</h1>
-          </div>
-
-          <div class="page">
-            <table class="table table-striped">
-              <thead class="table-dark">
-                <tr>
-                  <th>Titulo</th>
-                  <th>Descripcion</th>
-                  <th>Fecha_modificacion</th>
-                </tr>
-              </thead>
-              <tbody>
-                <t t-foreach="docs" t-as="incidencia">
-                  <t t-call="web.external_layout">
-                    <tr>
-                      <img t-att-src="image_data_uri(incidencia.foto)"
-                        style="max-height: 100px"
-                      />
-                      <td>
-                        <span t-field="incidencia.titulo"></span>
-                      </td>
-                      <td>
-                        <span t-field="incidencia.description"></span>
-                      </td>
-                      <td>
-                        <span t-field="incidencia.fecha_modificacion"></span>
-                      </td>
-                    </tr>
-                  </t>
-                </t>
-              </tbody>
-            </table>
-          </div>
-
-        </t>
-      </template>
-
     </record>
+    <template id="soporte.report_incidencia">
+      <t t-call="web.basic_layout">
+
+        <div class="alert alert-primary" role="alert">
+          <h1>Reporte de incidencias</h1>
+        </div>
+
+        <div class="page">
+          <table class="table table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Fecha_modificacion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <t t-foreach="docs" t-as="incidencia">
+                <t t-call="web.external_layout">
+                  <tr>
+                    <img t-att-src="image_data_uri(incidencia.foto)"
+                      style="max-height: 100px"
+                    />
+                    <td>
+                      <span t-field="incidencia.titulo"></span>
+                    </td>
+                    <td>
+                      <span t-field="incidencia.description"></span>
+                    </td>
+                    <td>
+                      <span t-field="incidencia.fecha_modificacion"></span>
+                    </td>
+                  </tr>
+                </t>
+              </t>
+            </tbody>
+          </table>
+        </div>
+
+      </t>
+    </template>
+
+
     <!--
         <template id="listing">
           <ul>

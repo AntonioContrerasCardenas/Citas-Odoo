@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
 
-    <record module="ir.module.category" id="soporte_categoria_incidencia">
+    <record model="ir.module.category" id="soporte_categoria_incidencia">
 
         <field name="name">Soporte</field>
         <field name="description">Gestions de usuarios para el modulo de soporte</field>
@@ -9,7 +9,7 @@
 
     </record>
 
-    <record module="res.groups" id="soporte_usuarios">
+    <record model="res.groups" id="soporte_users">
         <field name="name">Usuarios para consulta</field>
         <field name="category_id" ref="soporte_categoria_incidencia" />
         <field name="comment">Usuarios basicos para soporte</field>
@@ -17,7 +17,7 @@
 
     </record>
 
-    <record module="res.groups" id="soporte_admins">
+    <record model="res.groups" id="soporte_admins">
         <field name="name">Usuarios administradores</field>
         <field name="category_id" ref="soporte_categoria_incidencia" />
         <field name="comment">Usuarios administradores para soporte</field>

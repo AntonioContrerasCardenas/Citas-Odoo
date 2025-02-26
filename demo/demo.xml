@@ -44,7 +44,7 @@
     <!-- Datos para el modelo soporte.incidencia -->
     <record id="incidencia0" model="soporte.incidencia">
       <field name="titulo">Incidencia 0</field>
-      <field name="descripcion">El ordenador del aula no funciona.</field>
+      <field name="description">El ordenador del aula no funciona.</field>
       <field name="prioridad">0</field>
       <field name="ubicacion_id" ref="ubicacion2" />
       <field name="cerrada">0</field>
@@ -56,7 +56,7 @@
 
     <record id="incidencia1" model="soporte.incidencia">
       <field name="titulo">Incidencia 1</field>
-      <field name="descripcion">El raton del aula no funciona.</field>
+      <field name="description">El raton del aula no funciona.</field>
       <field name="prioridad">2</field>
       <field name="ubicacion_id" ref="ubicacion3" />
       <field name="cerrada">1</field>

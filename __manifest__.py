@@ -9,7 +9,7 @@
         Descripción del módulo para la gestión de incidencias
     """,
 
-    'author': "My Company",
+    'author': "Antonio Contreras Cardenas",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
